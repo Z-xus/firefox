@@ -227,19 +227,57 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
 user_pref("browser.search.suggest.enabled", true);
+user_pref("ui.key.menuAccessKeyFocuses", false);
+user_pref("ui.key.menuAccessKey", 17);
+user_pref("browser.urlbar.resultMenu.keyboardAccessible", false)
 
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
-// visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
-// Enter your scrolling overrides below this line:
-// recommended for 90hz+ displays
+
+/****************************************************************************************
+ * OPTION: SHARPEN SCROLLING                                                           *
+****************************************************************************************/
+// credit: https://github.com/black7375/Firefox-UI-Fix
+// only sharpen scrolling
+// user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
+// user_pref("general.smoothScroll", true); // DEFAULT
+// user_pref("mousewheel.min_line_scroll_amount", 10); // 10-40; adjust this number to your liking; default=5
+// user_pref("general.smoothScroll.mouseWheel.durationMinMS", 80); // default=50
+// user_pref("general.smoothScroll.currentVelocityWeighting", "0.15"); // default=.25
+// user_pref("general.smoothScroll.stopDecelerationWeighting", "0.6"); // default=.4
+// Firefox Nightly only:
+// [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1846935
+// user_pref("general.smoothScroll.msdPhysics.enabled", false); // [FF122+ Nightly]
+
+/****************************************************************************************
+ * OPTION: INSTANT SCROLLING (SIMPLE ADJUSTMENT)                                       *
+****************************************************************************************/
+// recommended for 60hz+ displays
 user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
 user_pref("general.smoothScroll", true); // DEFAULT
-user_pref("general.smoothScroll.msdPhysics.enabled", true);
-user_pref("mousewheel.default.delta_multiplier_y", 300); // 250-400; adjust this number to your liking
+user_pref("mousewheel.default.delta_multiplier_y", 250); // 275 def // 250-400; adjust this number to your liking
+// Firefox Nightly only:
+// [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1846935
+user_pref("general.smoothScroll.msdPhysics.enabled", false); // [FF122+ Nightly]
+
+
+/****************************************************************************************
+ * OPTION: STOP OVERSCROLL BOUNCE 		                                        *
+****************************************************************************************/
+
+user_pref("apz.overscroll.damping", 1.1);
+user_pref("apz.overscroll.enabled", false);
+user_pref("apz.overscroll.max_velocity", 10.0);
+user_pref("apz.overscroll.min_pan_distance_ratio", 1.0);
+user_pref("apz.overscroll.spring_stiffness", 200.0);
+user_pref("apz.overscroll.stop_distance_threshold", 5.0);
+user_pref("apz.overscroll.stop_velocity_threshold", 0.01);
+user_pref("apz.overscroll.stretch_factor", 0.35);
+user_pref("apz.overscroll.test_async_scroll_offset.enabled", false);
+user_pref("layout.css.overscroll-behavior.enabled", true);
 
 /****************************************************************************
- * END: BETTERFOX                                                           *
+ * end: betterfox                                                           *
 ****************************************************************************/

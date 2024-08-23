@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Do not ignore directories, so we can explicitly unignore files within them
+!*/
+
+# Track the entire chrome directory and its contents
+!/chrome/
+!/chrome/**
+
+# Track specific files
+!/user.js
+!/README.md
+!/assets/preview.png
